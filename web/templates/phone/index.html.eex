@@ -1,0 +1,12 @@
+<h1>Listing name and number</h1>
+<table class="table">
+<%= for user <- @phonebooks do %>
+<tr>
+  
+<td><b><%= first_name(user)%></b>(<%=user.id%>)</td>
+<td><b><%=user.number%></b></td>
+
+</tr>
+<%=end%>
+
+<%= link "New", to: phone_path(@conn, :new) %>
