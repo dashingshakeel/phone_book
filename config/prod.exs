@@ -15,6 +15,12 @@ config :phonebook, Phonebook.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json"
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  ssl: true
+url: [scheme: "https", host: "serene-island-43409.herokuapp.com", port: 443],
+force_ssl: [rewrite_on: [:x_forwarded_proto]],
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -62,4 +68,4 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+
