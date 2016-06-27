@@ -5,9 +5,13 @@
   
 <td><b><%= user.name%></b>(<%=user.id%>)</td>
 <td><b><%=user.number%></b></td>
-<td class="text-right">
-<%= link "Delete", to: phone_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></td>
+<td>
+  <%= link "Show", to: phone_path(@conn, :show, user) %>
+  <%= link "Delete", to: phone_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %>
+  <%= link "Edit", to: phone_path(@conn, :edit, user)%>
+</td>
 </tr>
+
 <%=end%>
 
 <%= link "New", to: phone_path(@conn, :new) %>
