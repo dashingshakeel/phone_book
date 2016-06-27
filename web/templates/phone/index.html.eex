@@ -5,7 +5,8 @@
   
 <td><b><%= user.name%></b>(<%=user.id%>)</td>
 <td><b><%=user.number%></b></td>
-
+<td class="text-right">
+<%= link "Delete", to: phone_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></td>
 </tr>
 <%=end%>
 

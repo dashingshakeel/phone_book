@@ -23,4 +23,13 @@ defmodule Phonebook.PhoneController do
         render(conn, "new.html",changeset: changeset)
     end
   end
+
+  def delete(conn,%{"id" => id})do
+    phone =Repo.get!(Phonebook, id)
+    Repo.delete!(phone)
+    
+    conn
+    |> put_flash(:info, "phone number deleted")
+    |> redirect(to: phone_path(conn,:index))
+    end
 end
