@@ -1,0 +1,18 @@
+<h2>Show numbr</h2>
+
+<ul>
+
+  <li>
+    <strong>NAME:</strong>
+    <%= @phone.name %>
+  </li>
+
+  <li>
+    <strong>Number:</strong>
+    <%= @phone.number %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: phone_path(@conn, :edit, @phone) %>
+<%= link "Back", to: phone_path(@conn, :index) %>

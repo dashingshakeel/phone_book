@@ -46,7 +46,6 @@ defmodule Phonebook.PhoneController do
   def update(conn, %{"id" => id, "phonebook" => params}) do
     phone = Repo.get!(Phonebook, id)
     changeset = Phonebook.changeset(phone, params)
-
     case Repo.update(changeset) do
       {:ok, phone} ->
         conn
