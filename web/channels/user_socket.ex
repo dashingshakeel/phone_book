@@ -5,6 +5,7 @@ defmodule Phonebook.UserSocket do
   # channel "rooms:*", Phonebook.RoomChannel
 
   ## Transports
+  
   transport :websocket, Phoenix.Transports.WebSocket
   # transport :longpoll, Phoenix.Transports.LongPoll
 
