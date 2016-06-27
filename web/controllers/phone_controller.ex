@@ -15,12 +15,12 @@ defmodule Phonebook.PhoneController do
   def create(conn, %{"phonebook" => params})do
     changeset= Phonebook.changeset(%Phonebook{}, params)
     case Repo.insert(changeset) do
-       {:ok, phonebook}->
+      {:ok, phonebook}->
         conn
         |> put_flash(:info, "#{phonebook.name} created!")
         |>redirect(to: phone_path(conn, :index))
-        {:error, changeset}->
-          render(conn, "new.html",changeset: changeset)
+      {:error, changeset}->
+        render(conn, "new.html",changeset: changeset)
     end
   end
 end
